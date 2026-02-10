@@ -5,23 +5,20 @@ const app = new Hono<{ Bindings: Env }>();
 
 app.use("/*", cors());
 
-// Triage API endpoint
 app.post("/api/triage", async (c) => {
   try {
     const body = await c.req.json();
-    const { name, area, time, goal } = body;
+    const { name, phone, area, time, goal } = body;
 
-    // Validate required fields
+    // Validate required fields (telefone opcional no backend; se quiser obrigatório, inclua na condição)
     if (!name || !area || !time || !goal) {
-      return c.json(
-        { error: "Todos os campos são obrigatórios." },
-        400
-      );
+      return c.json({ error: "Todos os campos são obrigatórios." }, 400);
     }
 
-    // Truncate fields to 200 chars
+    // Truncate fields (telefone pode ser menor)
     const payload = {
       name: String(name).slice(0, 200),
+      phone: String(phone ?? "").slice(0, 50), // <-- ADICIONADO
       area: String(area).slice(0, 200),
       time: String(time).slice(0, 200),
       goal: String(goal).slice(0, 200),
@@ -37,17 +34,12 @@ app.post("/api/triage", async (c) => {
     // Forward to Google Sheets
     const response = await fetch(sheetUrl, {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload),
     });
 
     if (!response.ok) {
-      return c.json(
-        { error: "Falha ao registrar no Google Sheets." },
-        502
-      );
+      return c.json({ error: "Falha ao registrar no Google Sheets." }, 502);
     }
 
     return c.json({ success: true });
