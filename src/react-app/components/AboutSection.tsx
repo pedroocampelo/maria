@@ -2,10 +2,10 @@ import { ArrowRight, CheckCircle } from "lucide-react";
 import { siteConfig } from "@/shared/config";
 
 const credentials = [
-  "Mestranda em Fisioterapia e Funcionalidade (UFC)",
-  "Especialista em Traumato-Ortopedia (Residência UEL)",
-  "Membro do Tendon Research Group",
-  "Preceptora da Liga de Fisioterapia Esportiva",
+  "Graduada em Fisioterapia pela UFC",
+  "Mestre em Fisioterapia e Funcionalidade pela UFC",
+  "Especialista em Fisioterapia Traumato-Ortopédica Funcional (Residência UEL)",
+  "Atuação clínica com foco em reabilitação",
 ];
 
 export const AboutSection = () => {
@@ -29,24 +29,26 @@ export const AboutSection = () => {
           <div className="w-16 h-1 bg-primary"></div>
 
           <p className="text-background/80 leading-relaxed text-lg">
-            "Acredito que a fisioterapia vai muito além de tratar uma lesão: é
-            sobre devolver a autonomia. Minha trajetória acadêmica e clínica
-            sempre foi guiada pela busca da melhor evidência científica."
+            Acredito que a fisioterapia vai muito além de tratar uma lesão: é
+            sobre devolver a autonomia. Minha atuação profissional integra avaliação 
+            funcional, planejamento terapêutico individualizado e acompanhamento contínuo.
           </p>
 
           <p className="text-background/70 leading-relaxed">
             Graduada pela Universidade Federal do Ceará (UFC), busquei
             aprofundar meus conhecimentos práticos através da{" "}
             <strong>
-              Residência em Traumato-Ortopedia Funcional na UEL (Londrina)
+              Residência em Traumato-Ortopedia Funcional na UEL (Londrina).
             </strong>
-            , uma experiência imersiva de mais de 5.000 horas de prática.
+            Além disso, sou{" "}
+            <strong>
+              mestre em Fisioterapia
+            </strong>
+            pela UFC.
           </p>
 
           <p className="text-background/70 leading-relaxed">
-            Hoje, concilio o atendimento clínico com o{" "}
-            <strong>Mestrado na UFC</strong>, onde pesquiso e atuo no Grupo de
-            Pesquisa de Tendões (Tendon Research Group).
+           Hoje, divido minha rotina entre os atendimentos clínicos particulares pela manhã e os atendimentos na Clínica Qorpo à tarde.
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
