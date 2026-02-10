@@ -6,12 +6,12 @@ export const siteConfig = {
   crefito: "CREFITO-6/123456-F", // Update with real number
   
   whatsapp: {
-    number: "5585999999999", // International format
-    display: "(85) 99999-9999", // Human readable
+    number: "5585997311529", // International format
+    display: "(85) 9731-1529", // Human readable
   },
   
   social: {
-    instagram: "https://instagram.com/mariafernandafisio",
+    instagram: "https://instagram.com/mafemendonca.fisio",
     lattes: "http://lattes.cnpq.br/4041585296448897",
   },
   
