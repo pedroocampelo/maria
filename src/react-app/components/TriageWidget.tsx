@@ -13,6 +13,7 @@ export const TriageWidget = () => {
     time: "",
     goal: "",
     name: "",
+    phone: string;
   });
   const [showReview, setShowReview] = useState(false);
   const [showNameForm, setShowNameForm] = useState(false);
@@ -117,41 +118,54 @@ Objetivo: ${answers.goal}`;
   }
 
   // Show name form
-  if (showNameForm) {
-    return (
-      <form onSubmit={handleNameSubmit} className="space-y-6 animate-fade-in">
-        <h4 className="text-2xl font-semibold text-foreground">
-          Último passo: Qual seu nome?
-        </h4>
+if (showNameForm) {
+  return (
+    <form onSubmit={handleNameSubmit} className="space-y-6 animate-fade-in">
+      <h4 className="text-2xl font-semibold text-foreground">
+        Último passo: Seus dados
+      </h4>
 
-        <Input
-          type="text"
-          required
-          placeholder="Digite seu nome completo..."
-          value={answers.name}
-          onChange={(e) => setAnswers({ ...answers, name: e.target.value })}
-          className="text-base"
-          disabled={isSaving}
-        />
+      <Input
+        type="text"
+        required
+        placeholder="Digite seu nome completo..."
+        value={answers.name}
+        onChange={(e) => setAnswers({ ...answers, name: e.target.value })}
+        className="text-base"
+        disabled={isSaving}
+      />
 
-        <Button
-          type="submit"
-          className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
-          size="lg"
-          disabled={isSaving}
-        >
-          {isSaving ? (
-            "Enviando..."
-          ) : (
-            <>
-              Enviar pelo WhatsApp
-              <Phone className="ml-2 h-4 w-4" />
-            </>
-          )}
-        </Button>
-      </form>
-    );
-  }
+      <Input
+        type="tel"
+        required
+        inputMode="tel"
+        placeholder="Seu WhatsApp com DDD (ex.: 85 99999-9999)"
+        value={answers.phone}
+        onChange={(e) => setAnswers({ ...answers, phone: e.target.value })}
+        className="text-base"
+        disabled={isSaving}
+        pattern="[\d\s()+-]{8,20}"
+        title="Digite um número válido com DDD (apenas números e símbolos como espaço, +, (), -)."
+      />
+
+      <Button
+        type="submit"
+        className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
+        size="lg"
+        disabled={isSaving}
+      >
+        {isSaving ? (
+          "Enviando..."
+        ) : (
+          <>
+            Enviar pelo WhatsApp
+            <Phone className="ml-2 h-4 w-4" />
+          </>
+        )}
+      </Button>
+    </form>
+  );
+}
 
   // Show question steps
   return (
