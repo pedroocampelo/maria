@@ -7,7 +7,7 @@ export const siteConfig = {
   
   whatsapp: {
     number: "5585997311529", // International format
-    display: "(85) 9731-1529", // Human readable
+    display: "(85) 99731-1529", // Human readable
   },
   
   social: {
