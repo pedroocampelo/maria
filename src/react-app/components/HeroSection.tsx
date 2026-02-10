@@ -46,10 +46,6 @@ export const HeroSection = () => {
               <CheckCircle className="h-4 w-4 text-primary" />
               Residência UEL
             </span>
-            <span className="flex items-center gap-1.5">
-              <CheckCircle className="h-4 w-4 text-primary" />
-              Membro Tendon Group
-            </span>
           </div>
         </div>
 
