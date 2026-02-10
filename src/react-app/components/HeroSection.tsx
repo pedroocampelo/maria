@@ -36,19 +36,6 @@ export const HeroSection = () => {
             </Button>
           </div>
 
-          {/* Credentials */}
-          <div className="pt-6 border-t border-border flex flex-wrap gap-6 text-sm text-muted-foreground">
-            <span className="flex items-center gap-1.5">
-              <CheckCircle className="h-4 w-4 text-primary" />
-              Mestranda UFC
-            </span>
-            <span className="flex items-center gap-1.5">
-              <CheckCircle className="h-4 w-4 text-primary" />
-              Residência UEL
-            </span>
-          </div>
-        </div>
-
         {/* Hero Image */}
         <div className="w-full md:w-1/2 relative">
           <div className="absolute inset-0 bg-primary/10 rounded-full blur-3xl transform translate-x-10 translate-y-10"></div>
