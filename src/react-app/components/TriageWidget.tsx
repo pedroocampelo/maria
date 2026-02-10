@@ -45,31 +45,37 @@ export const TriageWidget = () => {
   };
 
   const handleNameSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSaving(true);
+  e.preventDefault();
+  setIsSaving(true);
 
-    // POST to API (don't block WhatsApp if this fails)
-    try {
-      await fetch("/api/triage", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(answers),
-      });
-    } catch (error) {
-      console.error("Failed to save triage:", error);
-    }
+  // POST to API (don't block WhatsApp if this fails)
+  try {
+    await fetch("/api/triage", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        area: answers.area,
+        time: answers.time,
+        goal: answers.goal,
+        name: answers.name,
+        phone: answers.phone, // <-- vai pro Sheets, mas não vai pro WhatsApp
+      }),
+    });
+  } catch (error) {
+    console.error("Failed to save triage:", error);
+  }
 
-    // Build WhatsApp message with line breaks
-    const message = `Olá! Me chamo ${answers.name}.
+  // Mensagem SEM telefone
+  const message = `Olá! Me chamo ${answers.name}.
 Fiz a triagem no site e gostaria de agendar uma avaliação.
 
 Área: ${answers.area}
 Tempo: ${answers.time}
 Objetivo: ${answers.goal}`;
 
-    setIsSaving(false);
-    openWhatsApp(message);
-  };
+  setIsSaving(false);
+  openWhatsApp(message);
+};
 
   // Show review screen
   if (showReview) {
