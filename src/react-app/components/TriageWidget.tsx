@@ -13,7 +13,7 @@ export const TriageWidget = () => {
     time: "",
     goal: "",
     name: "",
-    phone: "";
+    phone: "",
   });
   const [showReview, setShowReview] = useState(false);
   const [showNameForm, setShowNameForm] = useState(false);
