@@ -37,4 +37,5 @@ export type TriageAnswers = {
   time: string;
   goal: string;
   name: string;
+  phone: string;
 };
