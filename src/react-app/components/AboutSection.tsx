@@ -39,12 +39,12 @@ export const AboutSection = () => {
             aprofundar meus conhecimentos práticos através da{" "}
             <strong>
               Residência em Traumato-Ortopedia Funcional na UEL (Londrina).
-            </strong>
+            </strong>{" "}
             Além disso, sou{" "}
             <strong>
               mestre em Fisioterapia
-            </strong>
-            pela UFC.
+            </strong>{" "}
+             pela UFC.
           </p>
 
           <p className="text-background/70 leading-relaxed">
