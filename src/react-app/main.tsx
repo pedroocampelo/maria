@@ -10,7 +10,7 @@ const jsonLd = {
   name: "Dra. Maria Fernanda Mendonça de Sousa - Fisioterapia",
   description:
     "Fisioterapia humana com base científica em Fortaleza. Especialista em traumato-ortopedia, tendinopatias e reabilitação funcional.",
-  telephone: "+5585999999999",
+  telephone: "+5585997311529",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Fortaleza",
