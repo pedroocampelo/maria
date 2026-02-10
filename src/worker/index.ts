@@ -29,7 +29,7 @@ app.post("/api/triage", async (c) => {
     const env = c.env as Env & { GOOGLE_SHEETS_WEBHOOK_URL?: string };
     const sheetUrl =
       env.GOOGLE_SHEETS_WEBHOOK_URL ||
-      "https://script.google.com/macros/s/AKfycbwGoPQjVM-8Tv4QzqvSdHJTOCGxPIOM1BlqCJEttHXVcP8JsyD2setxofAnAQvuGMkMVg/exec";
+      "https://script.google.com/macros/s/AKfycbxtZOJ9pA7KYCAdgE6fmkeFiw-ziazaO0DCJaqsx9SlzDHu__IFIvs2wEW9GHShDZFKdg/exec";
 
     // Forward to Google Sheets
     const response = await fetch(sheetUrl, {
